@@ -17,6 +17,8 @@ public class DragAndDrop {
 	public static void chromeBrowser() throws InterruptedException {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
+		String sessionId = ((ChromeDriver)driver).getSessionId().toString();
+		System.out.println(sessionId);
 		System.out.println("----------Chrome Browser------------");
 		driver.get("https://www.lambdatest.com/selenium-playground");
 		driver.findElement(By.linkText("Drag & Drop Sliders")).click();
@@ -33,6 +35,8 @@ public class DragAndDrop {
 	public static void firefoxBrowser() {
 		WebDriver driver = new FirefoxDriver();
 		driver.manage().window().maximize();
+		String sessionId = ((FirefoxDriver)driver).getSessionId().toString();
+		System.out.println(sessionId);
 		System.out.println("----------FireFox Browser------------");
 		driver.get("https://www.lambdatest.com/selenium-playground");
 		driver.findElement(By.linkText("Drag & Drop Sliders")).click();
@@ -49,6 +53,8 @@ public class DragAndDrop {
 	public static void EdgeBrowser() {
 		WebDriver driver = new EdgeDriver();
 		driver.manage().window().maximize();
+		String sessionId = ((EdgeDriver)driver).getSessionId().toString();
+		System.out.println(sessionId);
 		System.out.println("----------Edge Browser------------");
 		driver.get("https://www.lambdatest.com/selenium-playground");
 		driver.findElement(By.linkText("Drag & Drop Sliders")).click();

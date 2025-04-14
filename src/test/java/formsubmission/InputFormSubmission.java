@@ -9,6 +9,7 @@ import java.awt.event.KeyEvent;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
@@ -18,6 +19,8 @@ public class InputFormSubmission {
 	public static void chromeBrowser() throws AWTException {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
+		String sessionId = ((ChromeDriver)driver).getSessionId().toString();
+		System.out.println(sessionId);
 		System.out.println("-----------ChromeBrowser----------");
 		driver.get("https://www.lambdatest.com/selenium-playground");
 		driver.findElement(By.linkText("Input Form Submit")).click();
@@ -57,6 +60,8 @@ public class InputFormSubmission {
 	public static void FirefoxBrowser() throws AWTException {
 		WebDriver driver = new FirefoxDriver();
 		driver.manage().window().maximize();
+		String sessionId = ((FirefoxDriver)driver).getSessionId().toString();
+		System.out.println(sessionId);
 		System.out.println("-----------FireFoxBrowser----------");
 		driver.get("https://www.lambdatest.com/selenium-playground");
 		driver.findElement(By.linkText("Input Form Submit")).click();
@@ -93,8 +98,10 @@ public class InputFormSubmission {
 
 	@Test (priority = 2)
 	public static void EdgeBrowser() throws AWTException {
-		WebDriver driver = new FirefoxDriver();
+		WebDriver driver = new EdgeDriver();
 		driver.manage().window().maximize();
+		String sessionId = ((EdgeDriver)driver).getSessionId().toString();
+		System.out.println(sessionId);
 		System.out.println("-----------EdgeBrowser----------");
 		driver.get("https://www.lambdatest.com/selenium-playground");
 		driver.findElement(By.linkText("Input Form Submit")).click();

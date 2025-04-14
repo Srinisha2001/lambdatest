@@ -17,6 +17,8 @@ public class SimpleFormDemo {
 	public static void chromeBrowser() {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
+		String sessionId = ((ChromeDriver)driver).getSessionId().toString();
+		System.out.println(sessionId);
 		System.out.println("----------Chrome Browser------------");
 		driver.get("https://www.lambdatest.com/selenium-playground");
 		driver.findElement(By.linkText("Simple Form Demo")).click();
@@ -38,6 +40,8 @@ public class SimpleFormDemo {
 	public static void firefoxBrowser() {
 		WebDriver driver = new FirefoxDriver();
 		driver.manage().window().maximize();
+		String sessionId = ((FirefoxDriver)driver).getSessionId().toString();
+		System.out.println(sessionId);
 		System.out.println("-----------FireFox Browser-------------");
 		driver.get("https://www.lambdatest.com/selenium-playground");
 		driver.findElement(By.linkText("Simple Form Demo")).click();
@@ -59,6 +63,8 @@ public class SimpleFormDemo {
 	public static void edgeBrowser() {
 		WebDriver driver = new EdgeDriver();
 		driver.manage().window().maximize();
+		String sessionId = ((EdgeDriver)driver).getSessionId().toString();
+		System.out.println(sessionId);
 		System.out.println("-----------Edge Browser-------------");
 		driver.get("https://www.lambdatest.com/selenium-playground");
 		driver.findElement(By.linkText("Simple Form Demo")).click();
